@@ -2,6 +2,8 @@
 	padding: 10px 0;
 	font-size: 1.5rem;
 	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	display: flex;
+	justify-content: space-between;
 }
 
 .logo {
@@ -10,4 +12,9 @@
 
 .logo .icon {
 	margin-right: 10px;
+}
+
+
+.menu {
+	display: flex;
 }

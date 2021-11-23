@@ -2,8 +2,9 @@ import "leaflet/dist/leaflet.css"
 import L from "leaflet"
 import { useEffect, useRef } from 'react';
 import style from './Map.module.css'
+import { useSelector } from "react-redux";
 
-const Map = () => {
+const Map = ({country}) => {
 	const mapContainer = useRef()
 
 	useEffect(() => {
