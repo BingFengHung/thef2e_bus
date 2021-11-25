@@ -5,6 +5,7 @@ import Map from './components/Map/Map';
 import { useEffect, useState } from 'react';
 import getData from './api/dataFetch'
 import { useSelector } from 'react-redux';
+import SearchPanel from './components/SearchPanel/SearchPanel';
 
 function App() {
   const countries = useSelector(state => state.country)
@@ -37,6 +38,7 @@ function App() {
     <div className={style.container}> 
       <Header/>
       <Map countries={country}/>
+      <SearchPanel/>
       <Footer/>
     </div>
   );

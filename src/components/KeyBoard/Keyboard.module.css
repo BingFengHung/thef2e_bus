@@ -1,0 +1,19 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 1px;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: palegreen;
+}
