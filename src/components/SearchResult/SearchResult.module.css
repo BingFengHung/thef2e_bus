@@ -1,0 +1,14 @@
+.container {
+	margin: 10px 0;
+}
+
+.result {
+	margin: 10px 0;
+	cursor: pointer;
+	background-color: red;
+}
+
+.route {
+	display: flex;
+	justify-content: space-between;
+}
