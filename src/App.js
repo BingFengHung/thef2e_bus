@@ -36,10 +36,17 @@ function App() {
 
   return (
     <div className={style.container}> 
+    <div className={style.header}>
       <Header/>
-      <Map countries={country}/>
-      <SearchPanel/>
+    </div>
+      <div className={style.wrapper}>
+        <SearchPanel/> 
+        <Map countries={country}/>
+      </div>
+
+      <div className={style.footer}>
       <Footer/>
+      </div>
     </div>
   );
 }

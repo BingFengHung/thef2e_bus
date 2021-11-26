@@ -9,7 +9,7 @@ const Map = ({country}) => {
 
 	useEffect(() => {
 		const map = L.map(mapContainer.current, {
-			center: [123, 123],
+			center: [21, 123],
 			zoom: 16
 		});
 		const osmUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
