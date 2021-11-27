@@ -16,7 +16,6 @@ const Header = () => {
      await getData(`/v2/Bus/Route/City/${country}?$top=30`)
       .then(res => {
         cityStops = res;
-				alert(JSON.stringify(cityStops))
       });
 
       // await getData(`/v2/Bus/Route/City/${countries}/${cityStop[0].RouteName.Zh_tw}`)

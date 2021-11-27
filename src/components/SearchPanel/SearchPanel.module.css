@@ -16,3 +16,8 @@
 .wrapper div:hover {
 	border: 3px solid orange;
 }
+
+.searchResult {
+	height: 30%;
+	background-color: #e3eeff;
+}

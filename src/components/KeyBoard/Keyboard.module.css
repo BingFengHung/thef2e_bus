@@ -7,11 +7,13 @@
 .button {
 	display: flex;
 	justify-content: center;
-	border: 1px solid gray;
+	border: 1px solid red;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 1px;
 	cursor: pointer;
+	background-color: #f5f6fa;
+	text-align: center;
 }
 
 .button:hover {

@@ -26,10 +26,10 @@ const SearchPanel = () => {
 				<input type="text" value={searchValue} />
 			</div>
 
-			<div>
+			<div className={style.searchResult}>
 				搜尋結果
 				<div>
-					<SearchResult data={searchResultList}/>
+					<SearchResult country={countrySelect} data={searchResultList}/>
 				</div>
 			</div>
 
@@ -40,7 +40,6 @@ const SearchPanel = () => {
 					getData(`/v2/Bus/Route/City/${countrySelect}?$filter=contains(RouteName/Zh_tw,'${searchValue}')&$top=30&$format=JSON`)
 					.then(res => {
 						setSearchResultList(res);
-						console.log('in')
 						// const data = res.map(i => 
 						// 	<div>{i.RouteName.Zh_tw}</div>
 						// 	)
