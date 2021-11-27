@@ -8,8 +8,6 @@ const Map = ({country}) => {
 	const mapContainer = useRef()
 	const stops = useSelector(state => state.stops);
 
-
-
 	useEffect(() => {
 		const map = L.map(mapContainer.current, {
 			center: [21, 123],

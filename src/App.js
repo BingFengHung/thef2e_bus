@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import getData from './api/dataFetch'
 import { useSelector } from 'react-redux';
 import SearchPanel from './components/SearchPanel/SearchPanel';
+import Tabs from './components/Tabs/Tabs';
+import SearchResultPages from './pages/SearchResultPages/SearchResultPages';
 
 function App() {
   const countries = useSelector(state => state.country)
@@ -13,19 +15,19 @@ function App() {
 
 
   useEffect(() => {
-    const fetchData = async () => { 
+    const fetchData = async () => {
       let cityStop = null;
       let stops = null
 
       await getData(`/v2/Bus/Route/City/${countries}?$top=30`)
-      .then(res => {
-        cityStop = res;
-      });
+        .then(res => {
+          cityStop = res;
+        });
 
       await getData(`/v2/Bus/Route/City/${countries}/${cityStop[0].RouteName.Zh_tw}`)
-      .then(res => {
-        stops = res;
-      });
+        .then(res => {
+          stops = res;
+        });
 
       setCountry(stops[0])
     }
@@ -35,17 +37,20 @@ function App() {
   }, [countries])
 
   return (
-    <div className={style.container}> 
-    <div className={style.header}>
-      <Header/>
-    </div>
+    <div className={style.container}>
+      <div className={style.header}>
+        <Header />
+      </div>
+
+
       <div className={style.wrapper}>
-        <SearchPanel/> 
-        <Map countries={country}/>
+        <SearchPanel />
+        <SearchResultPages/>
+        {/* <Map countries={country}/> */}
       </div>
 
       <div className={style.footer}>
-      <Footer/>
+        <Footer />
       </div>
     </div>
   );
