@@ -44,9 +44,15 @@ function App() {
 
 
       <div className={style.wrapper}>
+        {/* <div style={{height: '100%'}}>
+          <div style={{height: '50%', background: 'red'}}></div>
+          <div style={{height: '50%', background: 'green'}}></div>
+        </div> */}
         <SearchPanel />
-        <SearchResultPages/>
-        {/* <Map countries={country}/> */}
+        {/* <div> 
+          <SearchResultPages/> 
+          <Map countries={country}/>
+        </div>  */}
       </div>
 
       <div className={style.footer}>

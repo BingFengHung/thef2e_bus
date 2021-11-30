@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import style from './Map.module.css'
 import { useSelector } from "react-redux";
 
-const Map = ({country}) => {
+const Map = ({ country }) => {
 	const mapContainer = useRef()
 	const stops = useSelector(state => state.stops);
 
@@ -30,35 +30,35 @@ const Map = ({country}) => {
 		});
 
 
-			if (stops !== null) { 
-				stops.forEach(route => { 
-					route.Stops.forEach((stop, idx) => {
-						L.marker([stop.StopPosition.PositionLat, stop.StopPosition.PositionLon],
-							{icon: greenIcon}).addTo(map)
-							.bindPopup(
-								`<h1>${stop.StopName.Zh_tw}</h1>`
-								`<p>${stop.StopName.Zh_tw}</p>`
-							)
-					})
-
+		if (stops !== null) {
+			stops.forEach(route => {
+				route.Stops.forEach((stop, idx) => {
+					// alert(JSON.stringify(stop.StopName))
+					L.marker([stop.StopPosition.PositionLat, stop.StopPosition.PositionLon],
+						{ icon: greenIcon }).addTo(map)
+						.bindPopup(
+							`<h1>${stop.StopName.Zh_tw}</h1>`
+						)
 				})
 
-				console.log(stops)
-				console.log(stops[0].Stops[0].StopPosition.PositionLat );
-				console.log(stops[0].Stops[0].StopPosition.PositionLon ); 
-				
-				var corner1 = L.latLng(stops[0].Stops[0].StopPosition.PositionLat, stops[0].Stops[0].StopPosition.PositionLon), 
+			})
+
+			console.log(stops)
+			console.log(stops[0].Stops[0].StopPosition.PositionLat);
+			console.log(stops[0].Stops[0].StopPosition.PositionLon);
+
+			var corner1 = L.latLng(stops[0].Stops[0].StopPosition.PositionLat, stops[0].Stops[0].StopPosition.PositionLon),
 				corner2 = L.latLng(
-					stops[0].Stops[stops[0].Stops.length - 1].StopPosition.PositionLat, 
-					stops[0].Stops[stops[0].Stops.length - 1].StopPosition.PositionLon );
+					stops[0].Stops[stops[0].Stops.length - 1].StopPosition.PositionLat,
+					stops[0].Stops[stops[0].Stops.length - 1].StopPosition.PositionLon);
 
-				// var bounds = L.latLngBounds(corner1, corner2); 
-				map.fitBounds([corner1, corner2])
+			// var bounds = L.latLngBounds(corner1, corner2); 
+			map.fitBounds([corner1, corner2])
 
-				// map.panTo([
-				// 	stops[0].Stops[0].StopPosition.PositionLat, 
-				// 	stops[0].Stops[0].StopPosition.PositionLon])
-			}
+			// map.panTo([
+			// 	stops[0].Stops[0].StopPosition.PositionLat, 
+			// 	stops[0].Stops[0].StopPosition.PositionLon])
+		}
 
 		// unmount map function
 		return () => map.remove();

@@ -1,23 +1,16 @@
+
 .container {
-	height: 100%;
+	height: inherit;
+	display: flex;
+	flex-direction: column;
 }
 
-
-.wrapper {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-}
-
-.wrapper div {
-	border: 1px solid orange;
-}
-
-.wrapper div:hover {
-	border: 3px solid orange;
+.search_container {
+	height: 50%;
 }
 
 .searchResult {
-	height: 30%;
+	height: 50%;
 	background-color: #e3eeff;
+	overflow-y: scroll;
 }
