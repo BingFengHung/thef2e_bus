@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import SearchPanel from './components/SearchPanel/SearchPanel';
 import Tabs from './components/Tabs/Tabs';
 import SearchResultPages from './pages/SearchResultPages/SearchResultPages';
+import SearchPage from './pages/SearchPage/SearchPage'
 
 function App() {
   const countries = useSelector(state => state.country)
@@ -42,18 +43,19 @@ function App() {
         <Header />
       </div>
 
-
-      <div className={style.wrapper}>
-        {/* <div style={{height: '100%'}}>
+<SearchPage/>
+      {/* <div className={style.wrapper}>
+        {
+        <div style={{height: '100%'}}>
           <div style={{height: '50%', background: 'red'}}></div>
           <div style={{height: '50%', background: 'green'}}></div>
-        </div> */}
+        </div> }
         <SearchPanel />
-        {/* <div> 
+        <div> 
           <SearchResultPages/> 
           <Map countries={country}/>
-        </div>  */}
-      </div>
+        </div> 
+      </div> */}
 
       <div className={style.footer}>
         <Footer />
